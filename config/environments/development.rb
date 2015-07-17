@@ -48,10 +48,11 @@ Squash::Application.configure do
   config.middleware.delete 'Rack::Cors'
   config.middleware.use Rack::Cors do
     allow do
-      origins "localhost:#{$own_port}",
-              "127.0.0.1:#{$own_port}",
-              "[::1]:#{$own_port}"
-      resource '/api/1.0/notify', headers: :any, methods: [:post]
+#      origins "localhost:#{$own_port}",
+#              "127.0.0.1:#{$own_port}",
+#              "[::1]:#{$own_port}"
+      origins '*'
+      resource '/api/1.0/notify', headers: :any, methods: [:post, :options]
     end
   end
 end

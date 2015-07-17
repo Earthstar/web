@@ -63,6 +63,7 @@ module Squash
 
     # Configure allowed origins
     config.middleware.use Rack::Cors do
+#    config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
         origins *Squash::Configuration.dogfood.allowed_origins
         resource '/api/1.0/notify', headers: :any, methods: [:post]

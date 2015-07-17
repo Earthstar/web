@@ -1,12 +1,12 @@
 ---
-from: squash@YOUR_DOMAIN
-domain: YOUR_DOMAIN
-strategy: sendmail
+from: squash@vecna.com
+domain: vecna.com
+strategy: smtp
 smtp_settings:
-  address:
-  port:
-  domain:
-  user_name:
-  password:
-  authentication:
-  enable_starttls_auto:
+  address: OVERRIDE
+  port: '25'
+  domain: vecna.com
+  user_name: 
+  password: 
+  authentication: none
+  enable_starttls_auto: true
